@@ -1,0 +1,5 @@
+﻿Stage,Table,Rows Loaded
+Extract,customer_orders.csv,10 raw rows
+Load,dim_customers,6 unique customers
+Load,dim_products,8 unique products
+Load,fct_orders,10 order transactions
