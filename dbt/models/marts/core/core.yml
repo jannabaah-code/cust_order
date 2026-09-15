@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension table containing standardized customer attributes."
+
+  - name: dim_products
+    description: "Product dimension table containing product metadata."
+
+  - name: fct_orders
+    description: "Fact table containing order-level transactional data."
