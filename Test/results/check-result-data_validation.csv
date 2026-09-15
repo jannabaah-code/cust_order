@@ -1,0 +1,8 @@
+﻿Check,Result
+dim_customers row count,✓ 6
+dim_products row count,✓ 8
+fct_orders row count,✓ 10
+Orphan customer FKs,✓ 0
+Orphan product FKs,✓ 0
+NULL order amounts,✓ 0
+Invalid statuses,✓ 0
