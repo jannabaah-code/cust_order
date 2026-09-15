@@ -1,0 +1,11 @@
+version: 2
+
+snapshots:
+  - name: customers_snapshot
+    description: "SCD Type 2 snapshot tracking changes to customer attributes."
+
+  - name: products_snapshot
+    description: "SCD Type 2 snapshot tracking changes to product metadata."
+
+  - name: orders_snapshot
+    description: "SCD Type 2 snapshot tracking changes to order attributes over time."
