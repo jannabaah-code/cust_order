@@ -1,0 +1,67 @@
+```mermaid
+flowchart TD
+
+subgraph Airflow[Airflow Orchestration]
+    A[Airflow Scheduler] --> B[Trigger dbt_orchestration DAG]
+    A --> C[Trigger dbt_snapshots DAG]
+end
+
+subgraph DAG1[dbt_orchestration DAG]
+    B --> D[dbt run]
+    D --> E[dbt test]
+    E --> F[Slack Notification]
+end
+
+subgraph DAG2[dbt_snapshots DAG]
+    C --> G[dbt snapshot]
+end
+
+subgraph Sources[Raw Sources]
+    S1[raw_customers]
+    S2[raw_products]
+    S3[raw_orders]
+end
+
+subgraph Staging[Staging Models]
+    ST1[stg_customers]
+    ST2[stg_products]
+    ST3[stg_orders]
+end
+
+subgraph Marts[Dimensional Models]
+    M1[dim_customers]
+    M2[dim_products]
+    M3[fct_orders]
+end
+
+subgraph Snapshots[SCD Snapshots]
+    SS1[customers_snapshot]
+    SS2[products_snapshot]
+    SS3[orders_snapshot]
+end
+
+subgraph Reporting[Reporting Layer]
+    R1[order_summary]
+end
+
+S1 --> ST1
+S2 --> ST2
+S3 --> ST3
+
+ST1 --> M1
+ST2 --> M2
+ST3 --> M3
+
+M1 --> R1
+M3 --> R1
+
+ST1 --> SS1
+ST2 --> SS2
+ST3 --> SS3
+
+B --> D
+D --> E
+C --> G
+
+F --> H[Monitoring & Alerts]
+```

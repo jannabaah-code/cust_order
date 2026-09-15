@@ -1,0 +1,36 @@
+```mermaid
+flowchart TD
+
+subgraph Sources
+    S1[raw_customers]
+    S2[raw_products]
+    S3[raw_orders]
+end
+
+subgraph Staging
+    ST1[stg_customers]
+    ST2[stg_products]
+    ST3[stg_orders]
+end
+
+subgraph Marts
+    M1[dim_customers]
+    M2[dim_products]
+    M3[fct_orders]
+end
+
+subgraph Reporting
+    R1[order_summary]
+end
+
+S1 --> ST1
+S2 --> ST2
+S3 --> ST3
+
+ST1 --> M1
+ST2 --> M2
+ST3 --> M3
+
+M1 --> R1
+M3 --> R1
+```

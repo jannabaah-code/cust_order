@@ -1,0 +1,17 @@
+```mermaid
+flowchart LR
+
+A[Airflow Scheduler] --> B[dbt_orchestration DAG]
+
+subgraph DAG[dbt_orchestration]
+    B --> C[dbt run]
+    C --> D[dbt test]
+    D --> E[Slack Notification]
+end
+
+A --> F[dbt_snapshots DAG]
+
+subgraph SNAP[dbt_snapshots]
+    F --> G[dbt snapshot]
+end
+```
