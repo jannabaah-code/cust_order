@@ -1,0 +1,11 @@
+﻿order_id,customer_id,product_id,order_amount,order_currency,order_date,order_status
+1001,1,101,1200.00,USD,2024‑10‑26,delivered
+1002,2,102,25.50,USD,2024‑10‑27,shipped
+1003,3,103,150.75,USD,2024‑10‑28,processing
+1004,1,104,300.00,USD,2024‑10‑28,delivered
+1005,4,105,5.99,USD,2024‑10‑29,delivered
+1006,2,103,150.75,USD,2024‑10‑30,cancelled
+1007,5,106,89.99,USD,2024‑10‑31,delivered
+1008,3,107,12.50,USD,2024‑11‑01,shipped
+1009,6,108,45.00,USD,2024‑11‑02,delivered
+1010,4,101,1200.00,USD,2024‑11‑03,shipped
