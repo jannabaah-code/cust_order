@@ -1,0 +1,21 @@
+name: 'your_dbt_project'
+version: '1.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ['models']
+macro-paths: ['macros']
+seed-paths: ['seeds']
+snapshot-paths: ['snapshots']
+analysis-paths: ['analysis']
+
+models:
+  your_dbt_project:
+    staging:
+      +materialized: view
+    marts:
+      core:
+        +materialized: table
+      reporting:
+        +materialized: table
