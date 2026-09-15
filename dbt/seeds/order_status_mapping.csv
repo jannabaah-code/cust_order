@@ -1,0 +1,6 @@
+raw_status,clean_status,description
+Delivered,delivered,Order delivered to customer
+Shipped,shipped,Order shipped but not yet delivered
+Processing,processing,Order is being prepared
+Cancelled,cancelled,Order was cancelled
+Pending,processing,Pending is treated as processing

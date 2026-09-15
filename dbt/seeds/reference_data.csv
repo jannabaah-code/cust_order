@@ -1,0 +1,7 @@
+key,value
+currency,USD
+status_delivered,delivered
+status_shipped,shipped
+status_processing,processing
+status_cancelled,cancelled
+default_category,Unknown
