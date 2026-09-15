@@ -1,0 +1,27 @@
+[
+  {
+    "conn_id": "dbt_postgres",
+    "conn_type": "postgres",
+    "host": "postgres",
+    "login": "dbt_user",
+    "password": "dbt_password",
+    "schema": "analytics",
+    "port": 5432
+  },
+  {
+    "conn_id": "slack_conn",
+    "conn_type": "http",
+    "host": "https://slack.com/api",
+    "password": "xoxb-your-slack-token"
+  },
+  {
+    "conn_id": "warehouse_snowflake",
+    "conn_type": "snowflake",
+    "login": "DBT_USER",
+    "password": "DBT_PASSWORD",
+    "account": "your_account",
+    "warehouse": "COMPUTE_WH",
+    "database": "ANALYTICS",
+    "schema": "PUBLIC"
+  }
+]

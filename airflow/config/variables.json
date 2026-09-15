@@ -1,0 +1,7 @@
+{
+  "dbt_project_path": "/usr/local/airflow/dbt",
+  "dbt_target": "prod",
+  "alert_channel": "#data-alerts",
+  "snapshot_schedule": "0 2 * * *",
+  "run_schedule": "0 */6 * * *"
+}
