@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        tests:
+          - not_null
+
+      - name: product_category
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Electronics", "Furniture", "Office Supplies"]
