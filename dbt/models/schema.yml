@@ -1,0 +1,87 @@
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: customers
+      - name: orders
+      - name: products
+
+models:
+  - name: stg_customers
+    description: "Cleaned customer data from raw.customers"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        tests:
+          - not_null
+      - name: customer_email
+        tests:
+          - not_null
+
+  - name: stg_orders
+    description: "Cleaned order data from raw.orders"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+      - name: order_amount
+        tests:
+          - not_null
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: ['processing', 'shipped', 'delivered', 'cancelled']
+
+  - name: stg_products
+    description: "Cleaned product data from raw.products"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        tests:
+          - not_null
+      - name: product_category
+        tests:
+          - not_null
+
+  - name: fct_orders
+    description: "Fact table of orders enriched with customer and product relationships"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+      - name: order_amount
+        tests:
+          - not_null
