@@ -1,0 +1,11 @@
+order_id,customer_id,customer_name,customer_email,product_id,product_name,product_category,order_amount,order_currency,order_date,order_status
+1001,1,Alice Johnson,alice.j@email.com,101,Laptop,Electronics,1200.00,USD,2024-10-26,delivered
+1002,2,Bob Smith,bob.s@email.com,102,Mouse,Electronics,25.50,USD,2024-10-27,shipped
+1003,3,Charlie Brown,charlie.b@email.com,103,Desk Chair,Furniture,150.75,USD,2024-10-28,processing
+1004,1,Alice Johnson,alice.j@email.com,104,Monitor,Electronics,300.00,USD,2024-10-28,delivered
+1005,4,Diana Prince,diana.p@email.com,105,Notebook,Office Supplies,5.99,USD,2024-10-29,delivered
+1006,2,Bob Smith,bob.s@email.com,103,Desk Chair,Furniture,150.75,USD,2024-10-30,cancelled
+1007,5,Eve Cooper,eve.c@email.com,106,Headphones,Electronics,89.99,USD,2024-10-31,delivered
+1008,3,Charlie Brown,charlie.b@email.com,107,Paper,Office Supplies,12.50,USD,2024-11-01,shipped
+1009,6,Frank Castle,frank.c@email.com,108,Desk Lamp,Furniture,45.00,USD,2024-11-02,delivered
+1010,4,Diana Prince,diana.p@email.com,101,Laptop,Electronics,1200.00,USD,2024-11-03,shipped
