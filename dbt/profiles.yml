@@ -1,0 +1,12 @@
+cust_order:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: your_password
+      dbname: cust_order
+      schema: public
