@@ -4,12 +4,15 @@ from airflow.utils.dates import days_ago
 
 with DAG(
     dag_id="dbt_snapshots",
-    schedule_interval="0 2 * * *",
+    schedule_interval="0 2 * * *",  # daily at 2 AM
     start_date=days_ago(1),
-    catchup=False
+    catchup=False,
 ) as dag:
 
     dbt_snapshot = BashOperator(
         task_id="dbt_snapshot",
-        bash_command="cd /usr/local/airflow/dbt && dbt snapshot"
+        bash_command="""
+        cd /usr/local/airflow/dbt && \
+        dbt snapshot --profiles-dir /usr/local/airflow/.dbt
+        """
     )
